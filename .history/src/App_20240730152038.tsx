@@ -7,6 +7,7 @@ import SearchBar from "./components/SearchBar";
 import CharacterGrid from "./components/CharacterGrid";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import "./App.css";
 
 const App: React.FC = () => {
   const [filteredCharacters, setFilteredCharacters] = useState<Character[]>([]);

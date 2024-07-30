@@ -51,6 +51,7 @@
     "ts-jest": "^29.2.3"
   },
   "jest": {
+    "preset": "@vue/cli-plugin-unit-jest",
     "transformIgnorePatterns": [
       "node_modules/(?!(axios)/)"
     ]

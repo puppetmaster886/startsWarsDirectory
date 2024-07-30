@@ -7,6 +7,7 @@ import SearchBar from "./components/SearchBar";
 import CharacterGrid from "./components/CharacterGrid";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import "./App.css";
 
 const App: React.FC = () => {
   const [filteredCharacters, setFilteredCharacters] = useState<Character[]>([]);
@@ -70,16 +71,16 @@ const App: React.FC = () => {
         </Typography>
         <SearchBar onSearch={handleSearch} />
       </Box>
-      {filteredCharacters.length === 0 && !loading && (
-        <Typography variant="h4" align="center">
-          No characters found.
-        </Typography>
-      )}
       <CharacterGrid characters={filteredCharacters} hasMore={hasMore} />
       {loading && (
         <Box display="flex" justifyContent="center" my={4}>
           <CircularProgress />
         </Box>
+      )}
+      {filteredCharacters.length === 0 && !loading && (
+        <Typography variant="h4" align="center">
+          No characters found.
+        </Typography>
       )}
       <div ref={lastCharacterRef} />
     </Container>
